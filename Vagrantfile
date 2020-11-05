@@ -67,6 +67,6 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.provision :shell, :path => "vagrant/provision.sh", :args => "graffiti-explorer"
+  config.vm.provision :shell, :path => "vagrant/provision.sh", :args => "graffiti"
   config.ssh.forward_agent = true
 end
