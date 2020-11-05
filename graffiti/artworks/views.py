@@ -6,7 +6,7 @@ from .models import Artist, Artwork
 from .serializers import ArtistSerializer, ArtworkSerializer
 
 @api_view(['GET','POST'])
-def artist_list(request):
+def artist_list(request, format=None):
   # List all artists
   if request.method == 'GET':
     artists = Artist.objects.all()
@@ -21,7 +21,7 @@ def artist_list(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET','PUT','DELETE'])
-def artist_detail(request, pk):
+def artist_detail(request, pk, format=None):
   try:
     artist = Artist.objects.get(pk=pk)
   except Artist.DoesNotExist:
@@ -43,7 +43,7 @@ def artist_detail(request, pk):
     return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST'])
-def artwork_list(request):
+def artwork_list(request, format=None):
   if request.method == 'GET':
     artworks = Artwork.objects.all()
     serializer = ArtworkSerializer(artworks, many=True)
@@ -57,7 +57,7 @@ def artwork_list(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET','PUT','DELETE'])
-def artwork_detail(request, pk):
+def artwork_detail(request, pk, format=None):
   try:
     artwork = Artwork.objects.get(pk=pk)
   except Artwork.DoesNotExist:
