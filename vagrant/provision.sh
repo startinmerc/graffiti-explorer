@@ -41,7 +41,7 @@ chmod a+x $PROJECT_DIR/manage.py
 # Add a couple of aliases to manage.py into .bashrc
 cat << EOF >> /home/vagrant/.bashrc
 export PYTHONPATH=$PROJECT_DIR
-export DJANGO_SETTINGS_MODULE=$PROJECT_NAME.settings.dev
+export DJANGO_SETTINGS_MODULE=$PROJECT_NAME.settings
 alias dj="django-admin.py"
 alias djrun="dj runserver 0.0.0.0:8000"
 alias djrunp="dj runserver_plus 0.0.0.0:8000"
