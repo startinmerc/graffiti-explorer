@@ -16,9 +16,12 @@ export default {
 <style scoped lang="scss">
 main {
 	height: 100vh;
-	background: pink;
 	text-align: center;
 	color: var(--red);
+	overflow: hidden;
+	background: no-repeat center center;
+	background-image: url("../assets/Homepage.jpg");
+	background-size: cover;
 	h1 {
 		font-size: 4rem;
 		background: var(--darkblue);
