@@ -1,16 +1,17 @@
 <template>
 	<div id="app">
-		<Homepage />
+		<Menu />
+		<router-view />
 	</div>
 </template>
 
 <script>
-import Homepage from "./components/Homepage.vue";
+import Menu from "./components/Menu.vue";
 
 export default {
 	name: "App",
 	components: {
-		Homepage,
+		Menu,
 	},
 };
 </script>
@@ -30,10 +31,6 @@ body {
 	font-family: "Raleway", sans-serif;
 	margin: 0;
 }
-#app {
-  overflow: hidden;
-  max-width: 100vw;
-}
 button {
 	border: 0;
 	border-radius: 500rem;
@@ -47,5 +44,9 @@ button {
 	padding: 0.25rem 0.5rem;
 	margin: 0.25rem;
 	cursor: pointer;
+}
+/*  */
+main {
+	min-height: 100vh;
 }
 </style>

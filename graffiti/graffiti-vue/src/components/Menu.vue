@@ -1,7 +1,7 @@
 <template>
   <nav>
     <b>York<br />Graffiti<br />Explorer</b>
-    <button>menu</button>
+    <router-link to="/about"><button>menu</button></router-link>
   </nav>
 </template>
 
