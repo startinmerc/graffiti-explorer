@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <b>York<br />Graffiti<br />Explorer</b>
+    <p id="nav-logo"><router-link to="/">York<br />Graffiti<br />Explorer</router-link></p>
     <router-link to="/about"><button>menu</button></router-link>
   </nav>
 </template>
@@ -23,6 +23,13 @@ nav {
   padding: 1rem;
   background-color: var(--darkblue);
   color: var(--red);
+  #nav-logo {
+    margin:0;
+  }
+  #nav-logo * {
+    color: var(--red);
+    text-decoration: none;
+  }
   ul {
     position: absolute;
   }
