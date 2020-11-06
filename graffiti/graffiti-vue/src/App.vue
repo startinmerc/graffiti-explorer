@@ -16,12 +16,33 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  --darkblue: #33405C;
+  --lightblue: #AFDEE4;
+  --yellow: #FEF05B;
+  --red: #E14E6D;
+  --black: #221E1D;
+  --white: #F9F9F9;
 }
+
+/* Style resets */
+body {
+	font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+button {
+  border: 0;
+  border-radius: 500rem;
+  background: var(--darkblue);
+  color: var(--red);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
 </style>
