@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
     'artworks.apps.ArtworksConfig',
     'rest_framework',
     'django.contrib.admin',
