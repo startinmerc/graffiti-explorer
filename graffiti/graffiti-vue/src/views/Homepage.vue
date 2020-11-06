@@ -2,7 +2,7 @@
 	<main>
 		<div>
 			<h1>York<br />Graffiti<br />Explorer</h1>
-			<button>View the map</button>
+			<router-link to="/map"><button>View the map</button></router-link>
 		</div>
 	</main>
 </template>
