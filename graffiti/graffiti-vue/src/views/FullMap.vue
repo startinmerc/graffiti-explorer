@@ -77,7 +77,7 @@ export default {
 
 				new mapboxgl.Popup()
 					.setLngLat(coordinates)
-					.setHTML(name)
+					.setHTML('<div id="vue-popup-content"></div>')
 					.addTo(mapBox);
 			});
 
