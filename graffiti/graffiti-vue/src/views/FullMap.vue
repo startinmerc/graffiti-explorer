@@ -21,6 +21,8 @@ export default {
 			this.addPoints(mapBox);
 			// Add layer with points
 			this.addLayer(mapBox);
+			// Add interactions
+			this.addMouseInteraction(mapBox);
 		});
 	},
 	methods: {
@@ -57,7 +59,33 @@ export default {
 				},
 			});
 		},
+		addMouseInteraction(mapBox) {
+			mapBox.on("click", "places", (e) => {
+				var coordinates = e.features[0].geometry.coordinates.slice();
+				var name = e.features[0].properties.name;
 
+				// Ensure that if the map is zoomed out such that multiple
+				// copies of the feature are visible, the popup appears
+				// over the copy being pointed to.
+				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+				}
+
+				new mapboxgl.Popup()
+					.setLngLat(coordinates)
+					.setHTML(name)
+					.addTo(mapBox);
+			});
+
+			// Change the cursor to a pointer when the mouse is over the places layer.
+			mapBox.on("mouseenter", "places", function() {
+				mapBox.getCanvas().style.cursor = "pointer";
+			});
+
+			// Change it back to a pointer when it leaves.
+			mapBox.on("mouseleave", "places", function() {
+				mapBox.getCanvas().style.cursor = "";
+			});
 		},
 	},
 };
