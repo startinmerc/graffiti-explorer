@@ -58,7 +58,7 @@ export default {
 				source: "places",
 				layout: {
 					// To change to custom eye marker
-					"icon-image": "{icon}-15",
+					"icon-image": "ArtworkMarker",
 					"icon-allow-overlap": true,
 				},
 			});
