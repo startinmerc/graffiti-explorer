@@ -48,5 +48,8 @@ main {
 		margin-bottom: 10vh;
 		text-align: left;
 	}
+	button {
+		font-size: 1.5rem;
+	}
 }
 </style>
