@@ -79,6 +79,17 @@ export default {
 					.setLngLat(coordinates)
 					.setHTML('<div id="vue-popup-content"></div>')
 					.addTo(mapBox);
+
+				// create a new Vue component with your props for this Popup
+				const popupInstance = new ArtworkPopupClass({
+					propsData: {
+						title: name,
+					},
+				});
+
+				// mount this Vue component within the empty div Mapbox GL JS has just
+				// created in the DOM
+				popupInstance.$mount("#vue-popup-content");
 			});
 
 			// Change the cursor to a pointer when the mouse is over the places layer.
