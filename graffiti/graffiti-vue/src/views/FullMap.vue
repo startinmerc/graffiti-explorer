@@ -66,7 +66,8 @@ export default {
 		addMouseInteraction(mapBox) {
 			mapBox.on("click", "places", (e) => {
 				var coordinates = e.features[0].geometry.coordinates.slice();
-				var name = e.features[0].properties.name;
+				var title = e.features[0].properties.title;
+				var description = e.features[0].properties.description;
 
 				// Ensure that if the map is zoomed out such that multiple
 				// copies of the feature are visible, the popup appears
@@ -83,7 +84,8 @@ export default {
 				// create a new Vue component with your props for this Popup
 				const popupInstance = new ArtworkPopupClass({
 					propsData: {
-						title: name,
+						title: title,
+						description: description,
 					},
 				});
 
