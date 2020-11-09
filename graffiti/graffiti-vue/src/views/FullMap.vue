@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import Vue from "vue";
 import mapboxgl from "mapbox-gl";
 import { geoData } from "../../data";
+// Import popup component & create class for mounting
+import ArtworkPopup from "../components/ArtworkPopup";
+const ArtworkPopupClass = Vue.extend(ArtworkPopup);
 
 export default {
 	name: "FullMap",
