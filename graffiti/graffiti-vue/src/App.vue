@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 :root {
 	--darkblue: #33405c;
 	--lightblue: #afdee4;
@@ -44,6 +44,10 @@ button {
 	padding: 0.25rem 0.5rem;
 	margin: 0.25rem;
 	cursor: pointer;
+	transition: color 80ms ease-in;
+	&:hover {
+		color: var(--white);
+	}
 }
 /*  */
 main {
