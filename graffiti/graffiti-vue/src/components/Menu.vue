@@ -16,6 +16,7 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
   width: calc(100% - 2rem);
   display: flex;
   justify-content: space-between;
