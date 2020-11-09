@@ -89,6 +89,10 @@ export default {
 					},
 				});
 
+				mapBox.flyTo({
+					center: e.features[0].geometry.coordinates,
+				});
+
 				// mount this Vue component within the empty div Mapbox GL JS has just
 				// created in the DOM
 				popupInstance.$mount("#vue-popup-content");
