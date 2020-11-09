@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Homepage from "../views/Homepage.vue";
 import About from "../views/About.vue";
 import FullMap from "../views/FullMap.vue";
+import ArtworkDetail from "../views/ArtworkDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
 		name: "FullMap",
 		component: FullMap,
 	},
+	{
+		path: "/detail",
+		name: "ArtworkDetail",
+		component: ArtworkDetail
+	}
 ];
 
 const router = new VueRouter({
