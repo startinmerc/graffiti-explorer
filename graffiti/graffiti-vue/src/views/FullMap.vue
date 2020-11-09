@@ -6,6 +6,7 @@
 
 <script>
 import mapboxgl from "mapbox-gl";
+import { geoData } from "../../data";
 
 export default {
 	name: "FullMap",
