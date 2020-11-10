@@ -97,6 +97,7 @@ export default {
 				// Center map on selcted point
 				mapBox.flyTo({
 					center: e.features[0].geometry.coordinates,
+					speed: 0.8,
 				});
 
 				// Mount Vue component within the Vue ref div created earlier
