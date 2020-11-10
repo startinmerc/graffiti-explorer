@@ -64,6 +64,8 @@ export default {
 					"icon-image": "ArtworkMarker",
 					// Allow icons to be visible over other icons
 					"icon-allow-overlap": true,
+					// Why, Mapbox, did it take me an hour to find this property in your docs?
+					"icon-anchor": "bottom",
 				},
 			});
 		},
