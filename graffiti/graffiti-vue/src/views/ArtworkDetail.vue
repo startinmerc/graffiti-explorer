@@ -10,16 +10,25 @@
 </template>
 
 <script>
+import { geoData } from "../../data";
+
 export default {
 	name: "ArtworkDetail",
 	props: {
 		title: {type: String, default: "Artwork Title"},
 		artist: {type: String, default: "Artwork Artist"},
 		description: {type: String, default: "Artwork Description"},
+	mounted() {
+		if (!this.$route.params.title) {
+			try {
+				let res = geoData.data.features.find(
+					(v) => v.properties.id === this.$route.params.id
+				);
+			} catch (error) {
+				console.log(error);
+			}
+		}
 	},
-	mounted(){
-		console.log(this.$route.params)
-	}
 };
 </script>
 
