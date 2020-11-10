@@ -78,6 +78,7 @@ export default {
 				var title = e.features[0].properties.title;
 				var artist = e.features[0].properties.artist;
 				var id = e.features[0].properties.id;
+				var photo = JSON.parse(e.features[0].properties.photos)[0];
 
 				const popup = new mapboxgl.Popup()
 					.setLngLat(coordinates)
@@ -91,6 +92,7 @@ export default {
 						title: title,
 						artist: artist,
 						id: id,
+						photo: photo,
 					},
 				});
 
