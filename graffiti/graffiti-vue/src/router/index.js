@@ -24,7 +24,7 @@ const routes = [
 		component: FullMap,
 	},
 	{
-		path: "/detail",
+		path: "/artwork/:id",
 		name: "ArtworkDetail",
 		component: ArtworkDetail
 	}
