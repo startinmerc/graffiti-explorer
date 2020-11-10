@@ -1,14 +1,19 @@
 <template>
 	<div class="artwork-popup">
-		<div class="placeholder"></div>
+		<div v-if="photo" :style="'background-image: url('+photo+')'" alt="artwork" class="popup__image"></div>
+		<div v-else class="placeholder"></div>
 		<h3>{{ title }}</h3>
 		<p>{{ artist }}</p>
-		<button>
-			View Detail
-			<icon-base icon-name="arrow-right" height="15" width="15">
-				<ArrowRight />
-			</icon-base>
-		</button>
+		<!-- This is broken! -->
+		<!-- Mapbox adds popups to the DOM, so Vue can't see them -->
+		<!-- <router-link to="/detail"> -->
+			<button>
+				View Detail
+				<icon-base icon-name="arrow-right" height="15" width="15">
+					<ArrowRight />
+				</icon-base>
+			</button>
+		<!-- </router-link> -->
 	</div>
 </template>
 
@@ -21,6 +26,7 @@ export default {
 		title: String,
 		artist: String,
 		id: String,
+		photo: String || null,
 	},
 	components: {
 		IconBase,
@@ -33,7 +39,8 @@ export default {
 @keyframes popup {
 	from {
 		opacity: 0;
-	} to {
+	}
+	to {
 		opacity: 1;
 	}
 }
@@ -72,5 +79,14 @@ export default {
 	margin-top: calc(0px - var(--padding));
 	// Gradient backgrounds
 	background-image: linear-gradient(132.18deg, #33405c 0%, #afdee4 100%);
+}
+.popup__image {
+	min-height: 50px;
+	// Widen to compensate for .mapbox-popup-content padding
+	width: calc(100% + var(--padding) * 2);
+	margin-left: calc(0px - var(--padding));
+	margin-top: calc(0px - var(--padding));
+	background-position: center;
+	background-size: cover;	
 }
 </style>
