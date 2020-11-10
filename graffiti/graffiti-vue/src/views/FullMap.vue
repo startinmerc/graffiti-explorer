@@ -76,15 +76,6 @@ export default {
 				var coordinates = e.features[0].geometry.coordinates.slice();
 				// Data from event trigger
 				var title = e.features[0].properties.title;
-				// Artwork description from event
-				var description = e.features[0].properties.description;
-
-				// Ensure that if the map is zoomed out such that multiple
-				// copies of the feature are visible, the popup appears
-				// over the copy being pointed to.
-				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-				}
 				var artist = e.features[0].properties.artist;
 				var id = e.features[0].properties.id;
 
