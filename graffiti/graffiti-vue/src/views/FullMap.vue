@@ -40,6 +40,7 @@ export default {
 					// Custom mapbox style
 					style: "mapbox://styles/startinmerc/ckh3c2oam2izs19nknv2xyviy",
 					// !-Arbitrary, to change to auto-fit points
+					center: [-1.080278, 53.958332],
 					// !-Arbitrary, to change to auto-fit points
 					zoom: 13,
 				});
