@@ -74,7 +74,7 @@ export default {
 			mapBox.on("click", "artworks", (e) => {
 				// Coordinates from event
 				var coordinates = e.features[0].geometry.coordinates.slice();
-				// Artwork title from event
+				// Data from event trigger
 				var title = e.features[0].properties.title;
 				// Artwork description from event
 				var description = e.features[0].properties.description;
@@ -85,6 +85,8 @@ export default {
 				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
 					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 				}
+				var artist = e.features[0].properties.artist;
+				var id = e.features[0].properties.id;
 
 				const popup = new mapboxgl.Popup()
 					.setLngLat(coordinates)
@@ -96,7 +98,8 @@ export default {
 				const popupInstance = new ArtworkPopupClass({
 					propsData: {
 						title: title,
-						description: description,
+						artist: artist,
+						id: id,
 					},
 				});
 
