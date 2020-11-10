@@ -30,6 +30,13 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes popup {
+	from {
+		opacity: 0;
+	} to {
+		opacity: 1;
+	}
+}
 .mapboxgl-popup {
 	--padding: 5px;
 	padding-bottom: 20px;
@@ -40,6 +47,8 @@ export default {
 .mapboxgl-popup-content {
 	padding: var(--padding);
 	border-radius: 0;
+	box-shadow: none;
+	animation: popup 280ms ease-in forwards;
 	button {
 		margin: 0;
 	}
