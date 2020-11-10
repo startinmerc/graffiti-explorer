@@ -33,40 +33,47 @@ export default {
 		loadMap() {
 			// Async loading function to await styles
 			return new Promise((resolve) => {
+				// Create Map
 				let mapBox = new mapboxgl.Map({
+					// Target div id
 					container: "map-container",
 					// Custom mapbox style
 					style: "mapbox://styles/startinmerc/ckh3c2oam2izs19nknv2xyviy",
-					// Arbitrary, to change to auto-fit points
-					center: [-1.07825, 53.95798],
-					// Arbitrary, to change to auto-fit points
+					// !-Arbitrary, to change to auto-fit points
+					// !-Arbitrary, to change to auto-fit points
 					zoom: 13,
 				});
+				// Resolve Promise when styling is loaded
 				mapBox.on("styledata", () => {
+					// Send mapBox to pass through to other methods
 					resolve(mapBox);
 				});
 			});
 		},
 		addPoints(mapBox) {
-			// Import geoJSON
-			mapBox.addSource("places", geoData);
+			// !-Import geoJSON from testData
+			mapBox.addSource("artworks", geoData);
 		},
 		addLayer(mapBox) {
 			mapBox.addLayer({
-				id: "places",
+				id: "artworks",
 				type: "symbol",
-				source: "places",
+				source: "artworks",
 				layout: {
-					// To change to custom eye marker
+					// SVG file loaded into Mapbox Studio style
 					"icon-image": "ArtworkMarker",
+					// Allow icons to be visible over other icons
 					"icon-allow-overlap": true,
 				},
 			});
 		},
 		addMouseInteraction(mapBox) {
-			mapBox.on("click", "places", (e) => {
+			mapBox.on("click", "artworks", (e) => {
+				// Coordinates from event
 				var coordinates = e.features[0].geometry.coordinates.slice();
+				// Artwork title from event
 				var title = e.features[0].properties.title;
+				// Artwork description from event
 				var description = e.features[0].properties.description;
 
 				// Ensure that if the map is zoomed out such that multiple
@@ -78,10 +85,11 @@ export default {
 
 				const popup = new mapboxgl.Popup()
 					.setLngLat(coordinates)
+					// Set HTML as Vue ref div
 					.setHTML('<div id="vue-popup-content"></div>')
 					.addTo(mapBox);
 
-				// create a new Vue component with your props for this Popup
+				// Create new Vue component with props for Popup
 				const popupInstance = new ArtworkPopupClass({
 					propsData: {
 						title: title,
@@ -89,26 +97,25 @@ export default {
 					},
 				});
 
+				// Center map on selcted point
 				mapBox.flyTo({
 					center: e.features[0].geometry.coordinates,
 				});
 
-				// mount this Vue component within the empty div Mapbox GL JS has just
-				// created in the DOM
+				// Mount Vue component within the Vue ref div created earlier
 				popupInstance.$mount("#vue-popup-content");
 
-				// since the size of the popup may have changed when mounting the Vue
-				// component, force an update for dynamic positioning
+				// Update popup after adding content to resize
 				popup._update();
 			});
 
-			// Change the cursor to a pointer when the mouse is over the places layer.
-			mapBox.on("mouseenter", "places", function() {
+			// Change the cursor to a pointer when the mouse is over the artworks layer.
+			mapBox.on("mouseenter", "artworks", function() {
 				mapBox.getCanvas().style.cursor = "pointer";
 			});
 
 			// Change it back to a pointer when it leaves.
-			mapBox.on("mouseleave", "places", function() {
+			mapBox.on("mouseleave", "artworks", function() {
 				mapBox.getCanvas().style.cursor = "";
 			});
 		},
