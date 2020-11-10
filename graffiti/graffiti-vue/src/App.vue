@@ -1,7 +1,9 @@
 <template>
 	<div id="app">
 		<Menu />
-		<router-view />
+		<transition name="page-fade">
+			<router-view />
+		</transition>
 	</div>
 </template>
 
@@ -52,5 +54,33 @@ button {
 /*  */
 main {
 	min-height: 100vh;
+}
+.page {
+	position: fixed;
+	width: 100%;
+}
+
+// Transitions
+.page-fade-enter-active {
+	animation: coming 180ms ease-in;
+}
+.page-fade-leave-active {
+	animation: going 180ms ease-in;
+}
+@keyframes going {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes coming {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 </style>
