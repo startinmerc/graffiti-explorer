@@ -59,6 +59,9 @@ main {
 	position: fixed;
 	width: 100%;
 }
+.padded {
+	padding: 0 15px;
+}
 
 // Transitions
 .page-fade-enter-active {
