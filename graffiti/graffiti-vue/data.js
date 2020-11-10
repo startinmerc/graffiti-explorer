@@ -6,6 +6,7 @@ export const testData = [
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "1",
 		id: "1",
+		photos: ["https://picsum.photos/seed/test-1/200/300"],
 	},
 	{
 		title: "test data 2",
@@ -14,6 +15,7 @@ export const testData = [
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "2",
 		id: "2",
+		photos: ["https://picsum.photos/seed/test-2/200/300"],
 	},
 	{
 		title: "test data 3",
@@ -22,6 +24,7 @@ export const testData = [
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "1",
 		id: "3",
+		photos: ["https://picsum.photos/seed/test-3/200/300"],
 	},
 	{
 		title: "test data 4",
@@ -30,6 +33,7 @@ export const testData = [
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "2",
 		id: "4",
+		photos: ["https://picsum.photos/seed/test-4/200/300"],
 	},
 	{
 		title: "test data 5",
@@ -38,6 +42,7 @@ export const testData = [
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "2",
 		id: "5",
+		photos: ["https://picsum.photos/seed/test-5/200/300"],
 	},
 ];
 
@@ -54,6 +59,7 @@ function buildJSON(data) {
 			icon: "ArtworkMarker",
 			id: v.id,
 			artist: v.artist,
+			photos: v.photos,
 		},
 	}));
 	return {
