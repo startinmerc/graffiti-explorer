@@ -5,7 +5,7 @@ export const testData = [
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "1",
-		id: 1,
+		id: "1",
 	},
 	{
 		title: "test data 2",
@@ -13,7 +13,7 @@ export const testData = [
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "2",
-		id: 2,
+		id: "2",
 	},
 	{
 		title: "test data 3",
@@ -21,7 +21,7 @@ export const testData = [
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "1",
-		id: 3,
+		id: "3",
 	},
 	{
 		title: "test data 4",
@@ -29,7 +29,7 @@ export const testData = [
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "2",
-		id: 4,
+		id: "4",
 	},
 	{
 		title: "test data 5",
@@ -37,7 +37,7 @@ export const testData = [
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex in illo quasi, repellat soluta porro architecto? Facilis distinctio natus iste illum quaerat provident debitis, numquam molestiae! Fuga similique officiis laboriosam!",
 		artist: "2",
-		id: 5,
+		id: "5",
 	},
 ];
 
