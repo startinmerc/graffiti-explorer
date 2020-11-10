@@ -2,7 +2,7 @@
 	<div class="artwork-popup">
 		<div class="placeholder"></div>
 		<h3>{{ title }}</h3>
-		<p>Artist</p>
+		<p>{{ artist }}</p>
 		<button>
 			View Detail
 			<icon-base icon-name="arrow-right" height="15" width="15">
@@ -19,6 +19,8 @@ export default {
 	name: "ArtworkPopup",
 	props: {
 		title: String,
+		artist: String,
+		id: String,
 	},
 	components: {
 		IconBase,
