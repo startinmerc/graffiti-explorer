@@ -28,13 +28,37 @@ export default {
 </script>
 
 <style lang="scss">
+.mapboxgl-popup {
+	--padding: 5px;
+	padding-bottom: 20px;
+}
+.mapboxgl-popup-tip {
+	display: none;
+}
+.mapboxgl-popup-content {
+	padding: var(--padding);
+	border-radius: 0;
+	button {
+		margin: 0;
+	}
+	h3,
+	p {
+		margin: var(--padding) 0;
+	}
+	h3 {
+		color: var(--red);
+	}
+}
+.mapboxgl-popup-close-button {
+	margin: 0;
+}
 // Placeholder for artwork image
 .placeholder {
-	height: 50px;
+	min-height: 50px;
 	// Widen to compensate for .mapbox-popup-content padding
-	width: calc(100% + 20px);
-	margin-left: -10px;
-	margin-top: -10px;
+	width: calc(100% + var(--padding) * 2);
+	margin-left: calc(0px - var(--padding));
+	margin-top: calc(0px - var(--padding));
 	// Gradient backgrounds
 	background-image: linear-gradient(132.18deg, #33405c 0%, #afdee4 100%);
 }
