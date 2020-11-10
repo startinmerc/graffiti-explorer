@@ -1,25 +1,28 @@
 <template>
 	<div class="artwork-popup">
-		<div v-if="photo" :style="'background-image: url('+photo+')'" alt="artwork" class="popup__image"></div>
+		<div
+			v-if="photo"
+			:style="'background-image: url(' + photo + ')'"
+			alt="artwork"
+			class="popup__image"
+		></div>
 		<div v-else class="placeholder"></div>
 		<h3>{{ title }}</h3>
 		<p>{{ artist }}</p>
-		<!-- This is broken! -->
-		<!-- Mapbox adds popups to the DOM, so Vue can't see them -->
-		<!-- <router-link to="/detail"> -->
-			<button>
-				View Detail
-				<icon-base icon-name="arrow-right" height="15" width="15">
-					<ArrowRight />
-				</icon-base>
-			</button>
-		<!-- </router-link> -->
+		<button @click="viewDetail">
+			View Detail
+			<icon-base icon-name="arrow-right" height="15" width="15">
+				<ArrowRight />
+			</icon-base>
+		</button>
 	</div>
 </template>
 
 <script>
 import IconBase from "./icons/IconBase";
 import ArrowRight from "./icons/ArrowRight";
+import router from "../router";
+
 export default {
 	name: "ArtworkPopup",
 	props: {
@@ -31,6 +34,20 @@ export default {
 	components: {
 		IconBase,
 		ArrowRight,
+	},
+	methods: {
+		viewDetail() {
+			router.push({
+				name: "ArtworkDetail",
+				params: {
+					id: this.id,
+					title: this.title,
+					artist: this.artist,
+					description: this.description,
+					photo: this.photo,
+				},
+			});
+		},
 	},
 };
 </script>
@@ -87,6 +104,6 @@ export default {
 	margin-left: calc(0px - var(--padding));
 	margin-top: calc(0px - var(--padding));
 	background-position: center;
-	background-size: cover;	
+	background-size: cover;
 }
 </style>
