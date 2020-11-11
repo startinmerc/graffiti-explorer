@@ -100,28 +100,54 @@ main {
 
 // ============== Page Transitions ==============
 
-.page-fade-enter-active {
-	animation: coming 180ms ease-in;
+.swipe-right-enter-active {
+	animation: rightComing 180ms ease-in;
 }
-.page-fade-leave-active {
-	animation: going 180ms ease-in;
-}
-
-@keyframes going {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
+.swipe-right-leave-active {
+	animation: rightGoing 180ms ease-in;
 }
 
-@keyframes coming {
+@keyframes rightGoing {
 	from {
-		opacity: 0;
+		transform: translateX(0);
 	}
 	to {
-		opacity: 1;
+		transform: translateX(-100%);
 	}
 }
+
+@keyframes rightComing {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
+.swipe-left-enter-active {
+	animation: leftComing 180ms ease-in;
+}
+.swipe-left-leave-active {
+	animation: leftGoing 180ms ease-in;
+}
+
+@keyframes leftGoing {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes leftComing {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
 </style>
