@@ -3,13 +3,18 @@
 		<p id="nav-logo">
 			<router-link to="/">York<br />Graffiti<br />Explorer</router-link>
 		</p>
-		<router-link to="/about">
-			<button>
-				<icon-base icon-name="hamburger" width="36" height="36">
-					<Hamburger />
-				</icon-base>
-			</button>
-		</router-link>
+		<button @click="toggleMenu">
+			<icon-base icon-name="hamburger" width="36" height="36">
+				<Hamburger />
+			</icon-base>
+		</button>
+		<transition name="menuSlide">
+		<ul v-if="menuOpen">
+			<li><router-link to="">Home</router-link></li>
+			<li><router-link to="/map">Map</router-link></li>
+			<li><router-link to="/about">About</router-link></li>
+		</ul>
+		</transition>
 	</nav>
 </template>
 
