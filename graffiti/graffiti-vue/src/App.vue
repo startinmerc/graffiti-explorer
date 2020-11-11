@@ -83,6 +83,16 @@ button {
 	}
 }
 
+a {
+	transition: all 80ms ease-out;
+	color: var(--red);
+	&:hover,
+	&:active {
+		background-color: var(--darkblue);
+		color: var(--white);
+	}
+}
+
 // =============== Global Elements ===============
 
 main {

@@ -51,12 +51,12 @@ nav {
 	padding: var(--padding);
 	background-color: var(--darkblue);
 	color: var(--red);
+
 	#nav-logo {
 		margin: 0;
-	}
-	#nav-logo * {
-		color: var(--red);
-		text-decoration: none;
+		a {
+			text-decoration: none;
+		}
 	}
 	ul {
 		position: absolute;
