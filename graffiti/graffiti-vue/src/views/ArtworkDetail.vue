@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<!-- Show photo if found -->
-		<img v-if="photo" :src="photo" alt="artwork" />
+		<img v-if="photos" :src="JSON.parse(photos)[0]" alt="artwork" />
 		<!-- Otherwise show placeholder -->
 		<div v-else class="placeholder"></div>
 		<div class="padded">
@@ -23,7 +23,7 @@ export default {
 			title: "Artwork Title",
 			artist: "Artwork Artist",
 			description: "Artwork Description",
-			photo: false,
+			photos: false,
 		};
 	},
 	mounted() {
@@ -42,13 +42,13 @@ export default {
 			this.title = res.properties.title;
 			this.description = res.properties.description;
 			this.artist = res.properties.artist;
-			this.photo = res.properties.photos;
+			this.photos = res.properties.photos;
 		} else {
 			// Set data to param properties
 			this.title = this.$route.params.title;
 			this.description = this.$route.params.description;
 			this.artist = this.$route.params.artist;
-			this.photo = this.$route.params.photos;
+			this.photos = this.$route.params.photos;
 		}
 	},
 };
