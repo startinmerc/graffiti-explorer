@@ -73,12 +73,12 @@ export default {
 		addMouseInteraction(mapBox) {
 			mapBox.on("click", "artworks", (e) => {
 				// Coordinates from event
-				var coordinates = e.features[0].geometry.coordinates.slice();
+				let coordinates = e.features[0].geometry.coordinates.slice();
 				// Data from event trigger
-				var title = e.features[0].properties.title;
-				var artist = e.features[0].properties.artist;
-				var id = e.features[0].properties.id;
-				var photo = JSON.parse(e.features[0].properties.photos)[0];
+				let title = e.features[0].properties.title;
+				let artist = e.features[0].properties.artist;
+				let description = e.features[0].properties.description;
+				let id = e.features[0].properties.id;
 
 				const popup = new mapboxgl.Popup()
 					.setLngLat(coordinates)
@@ -93,6 +93,7 @@ export default {
 						artist: artist,
 						id: id,
 						photo: photo,
+						description: description,
 					},
 				});
 
