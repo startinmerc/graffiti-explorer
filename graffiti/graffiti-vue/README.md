@@ -4,11 +4,12 @@
 
 ## To Do
 
-- Pass artwork props from popup link to detail [here](https://router.vuejs.org/guide/essentials/passing-props.html#function-mode)
-- sort out direct urls somehow (params combine with above?)
-- link up backend
-- menu dropdown
-- Set zoom & center map based on markers
+- Menu dropdown
+- Set zoom & center map based on markers(?)
+- Link up backend api...
+  - Change api response to geoJSON
+  - Implement validation on model fields
+  - Swap dbs?
 
 ---
 
