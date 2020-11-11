@@ -30,7 +30,6 @@ export default {
 
 <style scoped lang="scss">
 main {
-	height: 100vh;
 	text-align: center;
 	color: var(--red);
 	overflow: hidden;
@@ -47,6 +46,7 @@ main {
 		padding: 2rem;
 		display: inline-block;
 		margin-bottom: 10vh;
+		margin-top: 0;
 		text-align: left;
 	}
 	button {

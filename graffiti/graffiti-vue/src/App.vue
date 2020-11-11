@@ -54,7 +54,10 @@ button {
 }
 /*  */
 main {
+	position: absolute;
+	top: 90px;
 	width: 100%;
+	min-height: calc(100% - 90px);
 }
 .padded {
 	padding: 0 var(--padding);
