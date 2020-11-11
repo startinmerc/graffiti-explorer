@@ -7,11 +7,11 @@
 			<MenuIcon :menuOpen="menuOpen" />
 		</button>
 		<transition name="menuSlide">
-		<ul v-if="menuOpen">
-			<li><router-link to="">Home</router-link></li>
-			<li><router-link to="/map">Map</router-link></li>
-			<li><router-link to="/about">About</router-link></li>
-		</ul>
+			<ul v-if="menuOpen">
+				<li><router-link to="">Home</router-link></li>
+				<li><router-link to="/map">Map</router-link></li>
+				<li><router-link to="/about">About</router-link></li>
+			</ul>
 		</transition>
 	</nav>
 </template>
@@ -60,28 +60,53 @@ nav {
 	}
 	ul {
 		position: absolute;
-		z-index: -100;
 		top: 100%;
-		left: 0;
+		right: 0;
+		width: 50%;
+		height: calc(100vh - 90px);
+		background: var(--darkblue);
 		margin: 0;
 		padding: 0;
-		width: 100%;
 		list-style: none;
+		font-size: 1.3rem;
 		li {
 			a {
-				border-top: 1px solid var(--red);
 				padding: var(--padding);
 				display: inline-block;
 				color: var(--red);
 				background-color: var(--darkblue);
-				width: 100%;
+				width: calc(100% - 30px);
+				&:hover {
+					color: var(--white);
+				}
 			}
 		}
 	}
 }
+
+// Add classes
+.menuSlide-enter-active {
+	animation: slideIn 210ms ease-in forwards;
+}
+.menuSlide-leave-active {
+	animation: slideOut 210ms ease-in forwards;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
 	}
-	button {
-		// border: 1px solid var(--red);
+	to {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes slideOut {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(100%);
 	}
 }
 </style>
