@@ -7,7 +7,7 @@
 			<MenuIcon :menuOpen="menuOpen" />
 		</button>
 		<transition name="menuSlide">
-			<ul v-if="menuOpen">
+			<ul v-if="menuOpen" @click="toggleMenu">
 				<li><router-link to="">Home</router-link></li>
 				<li><router-link to="/map">Map</router-link></li>
 				<li><router-link to="/about">About</router-link></li>
@@ -81,15 +81,35 @@ nav {
 				}
 			}
 		}
+		// Darkened background for expanded menu
+		// !-z-indexing issue on leave
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -100%;
+			height: 100%;
+			width: 200%;
+			background-color: var(--black);
+			opacity: 0.2;
+			z-index: -1;
+		}
 	}
 }
 
-// Add classes
+// ================= Transitions =================
+
 .menuSlide-enter-active {
 	animation: slideIn 210ms ease-in forwards;
+	&::before {
+		animation: pseudoIn 210ms ease-in forwards;
+	}
 }
 .menuSlide-leave-active {
 	animation: slideOut 210ms ease-in forwards;
+	&::before {
+		animation: pseudoOut 210ms ease-in forwards;
+	}
 }
 
 @keyframes slideIn {
@@ -107,6 +127,28 @@ nav {
 	}
 	to {
 		transform: translateX(100%);
+	}
+}
+
+@keyframes pseudoIn {
+	from {
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0%);
+		opacity: 0.2;
+	}
+}
+
+@keyframes pseudoOut {
+	from {
+		transform: translateX(0%);
+		opacity: 0.2;
+	}
+	to {
+		transform: translateX(-50%);
+		opacity: 0;
 	}
 }
 </style>
