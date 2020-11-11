@@ -4,7 +4,17 @@
 
 ## To Do
 
+- Move `.placeholder` to App
 - Set zoom & center map based on markers(?)
+- Add breakpoint styling for full screen
+  - App
+  - About
+  - ArtworkDetail
+  - FullMap
+  - Homepage
+  - Menu
+- A11y checks
+
 - Link up backend api...
   - Change api response to geoJSON
   - Implement validation on model fields
