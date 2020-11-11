@@ -69,7 +69,8 @@ body {
 	margin: 0;
 }
 
-button {
+button,
+.button {
 	border: 0;
 	border-radius: 500rem;
 	background: var(--darkblue);

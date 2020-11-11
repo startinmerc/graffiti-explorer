@@ -5,13 +5,11 @@
 			Graffiti<br />
 			Explorer
 		</h1>
-		<router-link to="/map">
-			<button>
+		<router-link to="/map" class="button">
 				View the map
 				<icon-base icon-name="arrow-right">
 					<ArrowRight />
 				</icon-base>
-			</button>
 		</router-link>
 	</main>
 </template>
@@ -49,7 +47,7 @@ main {
 		margin-top: 0;
 		text-align: left;
 	}
-	button {
+	.button {
 		font-size: 1.5rem;
 	}
 }

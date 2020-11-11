@@ -8,13 +8,11 @@
 			<h1>{{ title }}</h1>
 			<b v-if="artist">{{ artist }}</b>
 			<p v-if="description">{{ description }}</p>
-			<router-link to="/map">
-				<button>
+			<router-link to="/map" class="button">
 					<icon-base icon-name="arrow-right" height="15" width="15">
 						<ArrowRight />
 					</icon-base>
 					Back to map
-				</button>
 			</router-link>
 		</div>
 	</main>
@@ -77,7 +75,7 @@ img {
 .placeholder {
 	height: 50vh;
 }
-button svg {
+.button svg {
 	transform: rotate(180deg);
 }
 </style>
