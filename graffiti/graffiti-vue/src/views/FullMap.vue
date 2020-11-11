@@ -39,10 +39,13 @@ export default {
 					container: "map-container",
 					// Custom mapbox style
 					style: "mapbox://styles/startinmerc/ckh3c2oam2izs19nknv2xyviy",
-					// !-Arbitrary, to change to auto-fit points
+					// Geolocation of map center
+					// !-To change to auto-fit points, currently York center
 					center: [-1.080278, 53.958332],
-					// !-Arbitrary, to change to auto-fit points
+					// Default zoom level
+					// !-To change to auto-fit points, currently arbitrary
 					zoom: 13,
+					// !-Add maxBounds (will require some geolocation digging)
 				});
 				// Resolve Promise when styling is loaded
 				mapBox.on("styledata", () => {

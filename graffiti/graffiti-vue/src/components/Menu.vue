@@ -79,12 +79,7 @@ nav {
 			a {
 				padding: var(--padding);
 				display: inline-block;
-				color: var(--red);
-				background-color: var(--darkblue);
 				width: calc(100% - 30px);
-				&:hover {
-					color: var(--white);
-				}
 			}
 		}
 		// Darkened background for expanded menu

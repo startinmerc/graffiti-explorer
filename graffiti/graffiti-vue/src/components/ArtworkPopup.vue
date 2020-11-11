@@ -9,6 +9,8 @@
 		<div v-else class="placeholder"></div>
 		<h3>{{ title }}</h3>
 		<p>{{ artist }}</p>
+		<!-- Can't be router-link as mounted after render -->
+		<!-- (Thanks, mapbox :face_with_rolling_eyes:) -->
 		<button @click="viewDetail">
 			View Detail
 			<icon-base icon-name="arrow-right" height="15" width="15">
