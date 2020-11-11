@@ -39,10 +39,12 @@ export default {
 
 <style lang="scss">
 nav {
+	// !-Not sticking atm, to look in to at some point
 	position: sticky;
 	top: 0;
 	left: 0;
 	z-index: 1;
+	// Fixed height for easier <main>s spacing
 	height: 60px;
 	width: calc(100% - var(--padding) * 2);
 	display: flex;
@@ -58,11 +60,15 @@ nav {
 			text-decoration: none;
 		}
 	}
+
+	// =============== Dropdown menu ===============
+
 	ul {
 		position: absolute;
 		top: 100%;
 		right: 0;
 		width: 50%;
+		// Full height minus header
 		height: calc(100vh - 90px);
 		background: var(--darkblue);
 		margin: 0;

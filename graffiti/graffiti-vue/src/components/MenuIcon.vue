@@ -38,12 +38,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .menu__bars,
 .menu__cross {
 	transition: transform 210ms ease-out;
-  transform-origin: center;
+	transform-origin: center;
 }
+
+// ================= Transitions =================
+
+// Spin & scale SVG path groups
 .menu--open {
 	.menu__bars {
 		transform: scale(0) rotate(-180deg);
