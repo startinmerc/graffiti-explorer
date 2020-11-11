@@ -28,15 +28,16 @@ export default {
 
 <style lang="scss">
 nav {
-	position: absolute;
+	position: sticky;
 	top: 0;
 	left: 0;
 	z-index: 100;
-	width: calc(100% - 2rem);
+	height: 60px;
+	width: calc(100% - var(--padding) * 2);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
+	padding: var(--padding);
 	background-color: var(--darkblue);
 	color: var(--red);
 	#nav-logo {

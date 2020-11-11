@@ -26,6 +26,7 @@ export default {
 	--red: #e14e6d;
 	--black: #221e1d;
 	--white: #f9f9f9;
+	--padding: 15px;
 }
 
 /* Style resets */
@@ -56,7 +57,7 @@ main {
 	width: 100%;
 }
 .padded {
-	padding: 0 15px;
+	padding: 0 var(--padding);
 }
 
 // Transitions
