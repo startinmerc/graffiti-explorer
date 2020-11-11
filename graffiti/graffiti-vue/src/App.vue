@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
+// ============== Root Variables ==============
+
 :root {
 	--darkblue: #33405c;
 	--lightblue: #afdee4;
@@ -29,11 +31,13 @@ export default {
 	--padding: 15px;
 }
 
-/* Style resets */
+// =============== Style resets ===============
+
 body {
 	font-family: "Raleway", sans-serif;
 	margin: 0;
 }
+
 button {
 	border: 0;
 	border-radius: 500rem;
@@ -48,28 +52,36 @@ button {
 	margin: 0.25rem;
 	cursor: pointer;
 	transition: color 80ms ease-in;
+
 	&:hover {
 		color: var(--white);
 	}
 }
-/*  */
+
+// =============== Global Elements ===============
+
 main {
 	position: absolute;
 	top: 90px;
 	width: 100%;
 	min-height: calc(100% - 90px);
 }
+
+// =============== Helper classes ===============
+
 .padded {
 	padding: 0 var(--padding);
 }
 
-// Transitions
+// ============== Page Transitions ==============
+
 .page-fade-enter-active {
 	animation: coming 180ms ease-in;
 }
 .page-fade-leave-active {
 	animation: going 180ms ease-in;
 }
+
 @keyframes going {
 	from {
 		opacity: 1;
@@ -78,6 +90,7 @@ main {
 		opacity: 0;
 	}
 }
+
 @keyframes coming {
 	from {
 		opacity: 0;
