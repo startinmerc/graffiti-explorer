@@ -100,11 +100,16 @@ main {
 
 // ============== Page Transitions ==============
 
+:root {
+	--page-time: 210ms;
+	--page-easing: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
 .swipe-right-enter-active {
-	animation: rightComing 180ms ease-in;
+	animation: rightComing var(--page-time) var(--page-easing);
 }
 .swipe-right-leave-active {
-	animation: rightGoing 180ms ease-in;
+	animation: rightGoing var(--page-time) var(--page-easing);
 }
 
 @keyframes rightGoing {
@@ -126,10 +131,10 @@ main {
 }
 
 .swipe-left-enter-active {
-	animation: leftComing 180ms ease-in;
+	animation: leftComing var(--page-time) var(--page-easing);
 }
 .swipe-left-leave-active {
-	animation: leftGoing 180ms ease-in;
+	animation: leftGoing var(--page-time) var(--page-easing);
 }
 
 @keyframes leftGoing {
