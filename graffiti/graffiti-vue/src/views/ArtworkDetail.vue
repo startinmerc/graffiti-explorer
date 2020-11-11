@@ -46,7 +46,7 @@ export default {
 			let res = geoData.data.features.find(
 				(v) => v.properties.id === this.$route.params.id
 			);
-			// If nothing found, break
+			// If nothing found, return & page gets default 'not found' data
 			if (!res) {
 				return;
 			}
