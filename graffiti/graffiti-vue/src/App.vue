@@ -112,7 +112,7 @@ main {
 
 :root {
 	--page-time: 210ms;
-	--page-easing: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+	--page-easing: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .swipe-right-enter-active {
