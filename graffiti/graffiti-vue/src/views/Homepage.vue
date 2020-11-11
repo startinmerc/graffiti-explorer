@@ -1,5 +1,5 @@
 <template>
-	<main class="page">
+	<main>
 		<h1>
 			York<br />
 			Graffiti<br />

@@ -1,5 +1,5 @@
 <template>
-	<main class="page">
+	<main>
 		<div id="map-container"></div>
 	</main>
 </template>

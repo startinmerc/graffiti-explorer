@@ -1,5 +1,5 @@
 <template>
-	<main class="page">
+	<main>
 		<h1>About the app</h1>
 		<div class="padded">
 			<p>

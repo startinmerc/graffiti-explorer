@@ -53,10 +53,6 @@ button {
 }
 /*  */
 main {
-	min-height: 100vh;
-}
-.page {
-	position: fixed;
 	width: 100%;
 }
 .padded {
