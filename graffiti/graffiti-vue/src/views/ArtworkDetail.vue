@@ -10,6 +10,9 @@
 			<p v-if="description">{{ description }}</p>
 			<router-link to="/map">
 				<button>
+					<icon-base icon-name="arrow-right" height="15" width="15">
+						<ArrowRight />
+					</icon-base>
 					Back to map
 				</button>
 			</router-link>
@@ -18,6 +21,8 @@
 </template>
 
 <script>
+import IconBase from "../components/icons/IconBase";
+import ArrowRight from "../components/icons/ArrowRight";
 import { geoData } from "../../data";
 
 export default {
@@ -29,6 +34,10 @@ export default {
 			description: undefined,
 			photos: undefined,
 		};
+	},
+	components: {
+		IconBase,
+		ArrowRight,
 	},
 	mounted() {
 		// If title (therefore others) not present...
@@ -67,5 +76,8 @@ img {
 }
 .placeholder {
 	height: 50vh;
+}
+button svg {
+	transform: rotate(180deg);
 }
 </style>
