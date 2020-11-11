@@ -79,6 +79,7 @@ export default {
 				let artist = e.features[0].properties.artist;
 				let description = e.features[0].properties.description;
 				let id = e.features[0].properties.id;
+				let photos = e.features[0].properties.photos;
 
 				const popup = new mapboxgl.Popup()
 					.setLngLat(coordinates)
@@ -92,7 +93,7 @@ export default {
 						title: title,
 						artist: artist,
 						id: id,
-						photo: photo,
+						photos: photos,
 						description: description,
 					},
 				});
