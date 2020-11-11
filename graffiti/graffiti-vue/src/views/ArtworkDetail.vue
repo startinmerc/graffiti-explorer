@@ -6,9 +6,13 @@
 		<div v-else class="placeholder"></div>
 		<div class="padded">
 			<h1>{{ title }}</h1>
-			<b>{{ artist }}</b>
-			<p>{{ description }}</p>
-			<router-link to="/map"><button>Back to map</button></router-link>
+			<b v-if="artist">{{ artist }}</b>
+			<p v-if="description">{{ description }}</p>
+			<router-link to="/map">
+				<button>
+					Back to map
+				</button>
+			</router-link>
 		</div>
 	</main>
 </template>
@@ -20,10 +24,10 @@ export default {
 	name: "ArtworkDetail",
 	data: function() {
 		return {
-			title: "Artwork Title",
-			artist: "Artwork Artist",
-			description: "Artwork Description",
-			photos: false,
+			title: "Artwork not found",
+			artist: undefined,
+			description: undefined,
+			photos: undefined,
 		};
 	},
 	mounted() {
