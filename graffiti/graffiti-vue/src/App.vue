@@ -15,6 +15,37 @@ export default {
 	components: {
 		Menu,
 	},
+	watch: {
+		$route(to, from) {
+			function direction(to, from) {
+				let last = from.path.split("/")[from.path.split("/").length - 1];
+				let dest = to.path.split("/")[to.path.split("/").length - 1];
+
+				if (dest === "") {
+					return "left";
+				}
+				if (last === "about") {
+					return "left";
+				}
+				if (
+					dest === "map" &&
+					from.path.split("/")[from.path.split("/").length - 2] === "artwork"
+				) {
+					return "left";
+				}
+				if (dest === "about") {
+					return "right";
+				}
+				if (last === "") {
+					return "right";
+				}
+				return "right";
+			}
+
+			console.log(`swipe direction: ${direction(to, from)}`);
+			// this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
+		},
+	},
 };
 </script>
 
