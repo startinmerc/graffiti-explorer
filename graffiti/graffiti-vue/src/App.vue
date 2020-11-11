@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<Menu />
-		<transition name="page-fade">
+		<transition :name="transitionName">
 			<router-view />
 		</transition>
 	</div>
@@ -14,6 +14,11 @@ export default {
 	name: "App",
 	components: {
 		Menu,
+	},
+	data() {
+		return {
+			transitionName: "",
+		};
 	},
 	watch: {
 		$route(to, from) {
@@ -32,8 +37,7 @@ export default {
 				return "right";
 			}
 
-			console.log(`swipe direction: ${direction(to, from)}`);
-			// this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
+			this.transitionName = `swipe-${direction(to, from)}`;
 		},
 	},
 };
