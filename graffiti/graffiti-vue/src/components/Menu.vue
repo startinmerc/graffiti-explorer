@@ -4,9 +4,7 @@
 			<router-link to="/">York<br />Graffiti<br />Explorer</router-link>
 		</p>
 		<button @click="toggleMenu">
-			<icon-base icon-name="hamburger" width="36" height="36">
-				<Hamburger />
-			</icon-base>
+			<MenuIcon :menuOpen="menuOpen" />
 		</button>
 		<transition name="menuSlide">
 		<ul v-if="menuOpen">
@@ -19,14 +17,12 @@
 </template>
 
 <script>
-import IconBase from "./icons/IconBase";
-import Hamburger from "./icons/Hamburger";
+import MenuIcon from "./MenuIcon";
 
 export default {
 	name: "Menu",
 	components: {
-		IconBase,
-		Hamburger,
+		MenuIcon,
 	},
 	data: function() {
 		return {
