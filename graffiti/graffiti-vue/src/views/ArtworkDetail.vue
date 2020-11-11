@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<!-- Show photo if found -->
-		<img v-if="photos" :src="JSON.parse(photos)[0]" alt="artwork" />
+		<img v-if="photos" :src="photos[0]" alt="artwork" />
 		<!-- Otherwise show placeholder -->
 		<div v-else class="placeholder"></div>
 		<div class="padded">
@@ -48,7 +48,7 @@ export default {
 			this.title = this.$route.params.title;
 			this.description = this.$route.params.description;
 			this.artist = this.$route.params.artist;
-			this.photos = this.$route.params.photos;
+			this.photos = JSON.parse(this.$route.params.photos);
 		}
 	},
 };
