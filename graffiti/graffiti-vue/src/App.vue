@@ -21,23 +21,13 @@ export default {
 				let last = from.path.split("/")[from.path.split("/").length - 1];
 				let dest = to.path.split("/")[to.path.split("/").length - 1];
 
-				if (dest === "") {
-					return "left";
-				}
-				if (last === "about") {
-					return "left";
-				}
 				if (
-					dest === "map" &&
-					from.path.split("/")[from.path.split("/").length - 2] === "artwork"
+					dest === "" ||
+					last === "about" ||
+					(dest === "map" &&
+						from.path.split("/")[from.path.split("/").length - 2] === "artwork")
 				) {
 					return "left";
-				}
-				if (dest === "about") {
-					return "right";
-				}
-				if (last === "") {
-					return "right";
 				}
 				return "right";
 			}
