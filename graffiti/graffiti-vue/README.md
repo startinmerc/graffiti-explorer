@@ -4,7 +4,6 @@
 
 ## To Do
 
-- Menu dropdown
 - Set zoom & center map based on markers(?)
 - Link up backend api...
   - Change api response to geoJSON
