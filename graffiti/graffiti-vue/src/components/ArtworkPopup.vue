@@ -1,8 +1,8 @@
 <template>
 	<div class="artwork-popup">
 		<div
-			v-if="photo"
-			:style="'background-image: url(' + photo + ')'"
+			v-if="photos"
+			:style="'background-image: url(' + JSON.parse(photos)[0] + ')'"
 			alt="artwork"
 			class="popup__image"
 		></div>
@@ -29,7 +29,8 @@ export default {
 		title: String,
 		artist: String,
 		id: String,
-		photo: String || null,
+		photos: String || null,
+		description: String,
 	},
 	components: {
 		IconBase,
@@ -44,7 +45,7 @@ export default {
 					title: this.title,
 					artist: this.artist,
 					description: this.description,
-					photo: this.photo,
+					photos: this.photos,
 				},
 			});
 		},
