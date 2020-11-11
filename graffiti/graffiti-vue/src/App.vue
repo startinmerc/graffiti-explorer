@@ -21,11 +21,15 @@ export default {
 		};
 	},
 	watch: {
+		// Watch for changes to route
 		$route(to, from) {
+			// Logic for working out page transition direction
 			function direction(to, from) {
+				// Extract last page & destination page
 				let last = from.path.split("/")[from.path.split("/").length - 1];
 				let dest = to.path.split("/")[to.path.split("/").length - 1];
 
+				// If any of these match, swipe left
 				if (
 					dest === "" ||
 					last === "about" ||
@@ -34,9 +38,11 @@ export default {
 				) {
 					return "left";
 				}
+				// Otherwise swipe right
 				return "right";
 			}
 
+			// Apply class name to transition group
 			this.transitionName = `swipe-${direction(to, from)}`;
 		},
 	},
@@ -164,5 +170,4 @@ main {
 		transform: translateX(0%);
 	}
 }
-
 </style>
