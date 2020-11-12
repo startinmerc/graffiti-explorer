@@ -60,9 +60,17 @@ nav {
 			text-decoration: none;
 		}
 	}
+}
 
-	// =============== Dropdown menu ===============
+@media screen and (min-width: 768px) {
+	nav {
+		width: 90%;
+		padding: var(--padding) 5%;
+	}
+}
 
+// =============== Dropdown menu ===============
+nav {
 	ul {
 		position: absolute;
 		top: 100%;
