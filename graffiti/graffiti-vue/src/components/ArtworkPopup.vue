@@ -90,16 +90,6 @@ export default {
 .mapboxgl-popup-close-button {
 	margin: 0;
 }
-// Placeholder for artwork image
-.placeholder {
-	min-height: 50px;
-	// Widen to compensate for .mapbox-popup-content padding
-	width: calc(100% + var(--padding) * 2);
-	margin-left: calc(0px - var(--padding));
-	margin-top: calc(0px - var(--padding));
-	// Gradient backgrounds
-	background-image: linear-gradient(132.18deg, #33405c 0%, #afdee4 100%);
-}
 .popup__image {
 	min-height: 50px;
 	// Widen to compensate for .mapbox-popup-content padding
