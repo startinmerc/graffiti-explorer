@@ -109,6 +109,12 @@ main {
 	top: 90px;
 	width: 100%;
 	min-height: calc(100% - 90px);
+
+@media screen and (min-width: 768px) {
+	.main--shrink-wide {
+		width: 80%;
+		margin: 0 10%;
+	}
 }
 
 // Placeholder for artwork image
@@ -128,6 +134,12 @@ main {
 
 .padded {
 	padding: 0 var(--padding);
+}
+
+@media screen and (min-width: 768px) {
+	.padded {
+		padding: 0;
+	}
 }
 
 // ============== Page Transitions ==============
