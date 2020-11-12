@@ -3,7 +3,7 @@
 		<p id="nav-logo">
 			<router-link to="/">York<br />Graffiti<br />Explorer</router-link>
 		</p>
-		<button @click="toggleMenu">
+		<button @click="toggleMenu" role="show menu">
 			<MenuIcon :menuOpen="menuOpen" />
 		</button>
 		<transition name="menuSlide">
@@ -86,7 +86,7 @@ nav {
 			max-width: 300px;
 			// Full height minus header
 			height: calc(100vh - 90px);
-			background: var(--darkblue);
+			background: var(--red);
 			margin: 0;
 			padding: 0;
 			list-style: none;
@@ -96,6 +96,11 @@ nav {
 					padding: var(--padding);
 					display: inline-block;
 					width: calc(100% - 30px);
+					color: var(--darkblue);
+					transition: background-color 80ms ease-in;
+					&:hover, &:active {
+						background-color: var(--white);
+					}
 				}
 			}
 		}
