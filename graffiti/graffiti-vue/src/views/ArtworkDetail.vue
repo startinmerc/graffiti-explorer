@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main id="artwork-detail" class="main--shrink-wide">
 		<div
 			class="placeholder"
 			:style="photos && { backgroundImage: `url(${photos[0]}` }"
@@ -12,10 +12,10 @@
 			<b v-if="artist">{{ artist }}</b>
 			<p v-if="description">{{ description }}</p>
 			<router-link to="/map" class="button">
-					<icon-base icon-name="arrow-right" height="15" width="15">
-						<ArrowRight />
-					</icon-base>
-					Back to map
+				<icon-base icon-name="arrow-right" height="15" width="15">
+					<ArrowRight />
+				</icon-base>
+				Back to map
 			</router-link>
 		</div>
 	</main>
