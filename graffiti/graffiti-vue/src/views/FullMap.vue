@@ -43,7 +43,7 @@ export default {
 					// Target div id
 					container: "map-container",
 					// Custom mapbox style
-					style: "mapbox://styles/startinmerc/ckh3c2oam2izs19nknv2xyviy",
+					style: process.env.VUE_APP_MAPBOX_STYLE,
 					// Geolocation of map center
 					center: [-1.080278, 53.958332],
 					// Default zoom level
