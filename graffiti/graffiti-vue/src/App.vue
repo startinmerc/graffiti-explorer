@@ -108,7 +108,8 @@ main {
 	position: absolute;
 	top: 90px;
 	width: 100%;
-	min-height: calc(100% - 90px);
+	min-height: calc(100vh - 90px);
+}
 
 @media screen and (min-width: 768px) {
 	.main--shrink-wide {

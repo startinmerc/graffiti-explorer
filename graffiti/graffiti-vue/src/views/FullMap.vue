@@ -35,8 +35,8 @@ export default {
 			return new Promise((resolve) => {
 				// Max Boundaries of map
 				var bounds = [
-					[-1.167997, 53.912440], // Southwest coordinates
-					[ -1.005763, 54.004220], // Northeast coordinates
+					[-1.167997, 53.91244], // Southwest coordinates
+					[-1.005763, 54.00422], // Northeast coordinates
 				];
 				// Create Map
 				let mapBox = new mapboxgl.Map({
@@ -45,12 +45,10 @@ export default {
 					// Custom mapbox style
 					style: "mapbox://styles/startinmerc/ckh3c2oam2izs19nknv2xyviy",
 					// Geolocation of map center
-					// !-To change to auto-fit points, currently York center
 					center: [-1.080278, 53.958332],
 					// Default zoom level
-					// !-To change to auto-fit points, currently arbitrary
 					zoom: 13,
-					// !-Add maxBounds (will require some geolocation digging)
+					// Add maxBounds
 					maxBounds: bounds,
 				});
 				// Resolve Promise when styling is loaded
