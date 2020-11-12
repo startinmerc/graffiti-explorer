@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main id="full-map">
 		<div id="map-container"></div>
 	</main>
 </template>
