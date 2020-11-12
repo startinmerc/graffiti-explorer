@@ -46,7 +46,7 @@ nav {
 	position: sticky;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 3;
 	// Fixed height for easier <main>s spacing
 	height: 60px;
 	width: calc(100% - var(--padding) * 2);
