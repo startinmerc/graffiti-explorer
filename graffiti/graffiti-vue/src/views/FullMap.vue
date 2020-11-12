@@ -90,7 +90,14 @@ export default {
 				let id = e.features[0].properties.id;
 				let photos = e.features[0].properties.photos;
 
-				const popup = new mapboxgl.Popup()
+				const popup = new mapboxgl.Popup({
+					// Offset bottom of popup to flow from marker pointer
+					offset: { bottom: [0, -20] },
+					// Remove max width to make it auto
+					maxWidth: "none",
+					// Remove close button
+					closeButton: false,
+				})
 					.setLngLat(coordinates)
 					// Set HTML as Vue ref div
 					.setHTML('<div id="vue-popup-content"></div>')
