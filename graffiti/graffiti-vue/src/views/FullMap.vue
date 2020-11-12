@@ -51,6 +51,16 @@ export default {
 					// Add maxBounds
 					maxBounds: bounds,
 				});
+
+				// Add control for geolocation of user
+				mapBox.addControl(
+					new mapboxgl.GeolocateControl({
+						positionOptions: {
+							enableHighAccuracy: true,
+						},
+						trackUserLocation: true,
+					})
+				);
 				// Resolve Promise when styling is loaded
 				mapBox.on("styledata", () => {
 					// Send mapBox to pass through to other methods
