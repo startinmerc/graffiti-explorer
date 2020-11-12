@@ -1,12 +1,16 @@
 <template>
 	<div class="artwork-popup">
 		<div
-			v-if="photos"
-			:style="'background-image: url(' + JSON.parse(photos)[0] + ')'"
-			alt="artwork"
-			class="popup__image"
-		></div>
-		<div v-else class="placeholder"></div>
+			class="placeholder"
+			:style="photos && { backgroundImage: `url(${JSON.parse(photos)[0]}` }"
+		>
+			<div
+				v-if="photos"
+				:style="'background-image: url(' + JSON.parse(photos)[0] + ')'"
+				alt="artwork"
+				class="popup__image"
+			></div>
+		</div>
 		<h3>{{ title }}</h3>
 		<p>{{ artist }}</p>
 		<!-- Can't be router-link as mounted after render -->
@@ -67,6 +71,13 @@ export default {
 .mapboxgl-popup {
 	--padding: 5px;
 	padding-bottom: 20px;
+	.placeholder {
+		min-height: 50px;
+		// Widen to compensate for .mapbox-popup-content padding
+		width: calc(100% + var(--padding) * 2);
+		margin-left: calc(0px - var(--padding));
+		margin-top: calc(0px - var(--padding));
+	}
 }
 .mapboxgl-popup-tip {
 	display: none;
@@ -92,10 +103,6 @@ export default {
 }
 .popup__image {
 	min-height: 50px;
-	// Widen to compensate for .mapbox-popup-content padding
-	width: calc(100% + var(--padding) * 2);
-	margin-left: calc(0px - var(--padding));
-	margin-top: calc(0px - var(--padding));
 	background-position: center;
 	background-size: cover;
 }

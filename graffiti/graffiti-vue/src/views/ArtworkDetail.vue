@@ -1,9 +1,12 @@
 <template>
 	<main>
-		<!-- Show photo if found -->
-		<img v-if="photos" :src="photos[0]" alt="artwork" />
-		<!-- Otherwise show placeholder -->
-		<div v-else class="placeholder"></div>
+		<div
+			class="placeholder"
+			:style="photos && { backgroundImage: `url(${photos[0]}` }"
+		>
+			<!-- Show photo if found -->
+			<img v-if="photos" :src="photos[0]" alt="artwork" />
+		</div>
 		<div class="padded">
 			<h1>{{ title }}</h1>
 			<b v-if="artist">{{ artist }}</b>
@@ -73,7 +76,8 @@ img {
 	display: block;
 }
 .placeholder {
-	height: 50vh;
+	height: 40vh;
+	width: 100%;
 }
 .button svg {
 	transform: rotate(180deg);
