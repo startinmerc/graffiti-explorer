@@ -8,7 +8,7 @@
 		</button>
 		<transition name="menuSlide">
 			<ul v-if="menuOpen" @click="toggleMenu">
-				<li><router-link to="">Home</router-link></li>
+				<li><router-link to="/">Home</router-link></li>
 				<li><router-link to="/map">Map</router-link></li>
 				<li><router-link to="/about">About</router-link></li>
 			</ul>
