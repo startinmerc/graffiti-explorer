@@ -7,11 +7,14 @@
 			<MenuIcon :menuOpen="menuOpen" />
 		</button>
 		<transition name="menuSlide">
-			<ul v-if="menuOpen" @click="toggleMenu">
-				<li><router-link to="/">Home</router-link></li>
-				<li><router-link to="/map">Map</router-link></li>
-				<li><router-link to="/about">About</router-link></li>
-			</ul>
+			<div class="menu" v-if="menuOpen" @click="toggleMenu">
+				<div class="backdrop"></div>
+				<ul>
+					<li><router-link to="/">Home</router-link></li>
+					<li><router-link to="/map">Map</router-link></li>
+					<li><router-link to="/about">About</router-link></li>
+				</ul>
+			</div>
 		</transition>
 	</nav>
 </template>
@@ -71,37 +74,34 @@ nav {
 
 // =============== Dropdown menu ===============
 nav {
-	ul {
+	.menu {
 		position: absolute;
 		top: 100%;
 		right: 0;
-		width: 50%;
-		// Full height minus header
-		height: calc(100vh - 90px);
-		background: var(--darkblue);
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		font-size: 1.3rem;
-		li {
-			a {
-				padding: var(--padding);
-				display: inline-block;
-				width: calc(100% - 30px);
+		display: grid;
+		grid-template-columns: 1fr auto;
+		width: 100%;
+		ul {
+			width: 50vw;
+			max-width: 300px;
+			// Full height minus header
+			height: calc(100vh - 90px);
+			background: var(--darkblue);
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 1.3rem;
+			li {
+				a {
+					padding: var(--padding);
+					display: inline-block;
+					width: calc(100% - 30px);
+				}
 			}
 		}
-		// Darkened background for expanded menu
-		// !-z-indexing issue on leave
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: -100%;
+		// Filler div to extend click listener
+		.backdrop {
 			height: 100%;
-			width: 200%;
-			background-color: var(--black);
-			opacity: 0.2;
-			z-index: -1;
 		}
 	}
 }
@@ -110,15 +110,9 @@ nav {
 
 .menuSlide-enter-active {
 	animation: slideIn 210ms ease-in forwards;
-	&::before {
-		animation: pseudoIn 210ms ease-in forwards;
-	}
 }
 .menuSlide-leave-active {
 	animation: slideOut 210ms ease-in forwards;
-	&::before {
-		animation: pseudoOut 210ms ease-in forwards;
-	}
 }
 
 @keyframes slideIn {
@@ -136,28 +130,6 @@ nav {
 	}
 	to {
 		transform: translateX(100%);
-	}
-}
-
-@keyframes pseudoIn {
-	from {
-		transform: translateX(-50%);
-		opacity: 0;
-	}
-	to {
-		transform: translateX(0%);
-		opacity: 0.2;
-	}
-}
-
-@keyframes pseudoOut {
-	from {
-		transform: translateX(0%);
-		opacity: 0.2;
-	}
-	to {
-		transform: translateX(-50%);
-		opacity: 0;
 	}
 }
 </style>
