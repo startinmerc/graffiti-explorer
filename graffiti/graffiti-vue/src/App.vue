@@ -68,6 +68,7 @@ body {
 	font-family: "Raleway", sans-serif;
 	margin: 0;
 	background-color: var(--white);
+	overflow-x: hidden;
 }
 
 button,
