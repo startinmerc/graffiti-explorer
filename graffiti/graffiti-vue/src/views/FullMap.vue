@@ -1,6 +1,6 @@
 <template>
 	<main id="full-map">
-		<div id="map-container"></div>
+		<div id="map-container" ref="mapContainer"></div>
 	</main>
 </template>
 
@@ -14,8 +14,16 @@ const ArtworkPopupClass = Vue.extend(ArtworkPopup);
 
 export default {
 	name: "FullMap",
-
 	mounted() {
+		// Generated URL using container's dimentions for image size
+		console.log(
+			`https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-1.0803,53.9583,12,0/${Math.min(
+				this.$refs.mapContainer.clientWidth,
+				1280
+			)}x${this.$refs.mapContainer.clientHeight}?access_token=${
+				process.env.VUE_APP_MAPBOX_TOKEN
+			}`
+		);
 		// Get API token from .env
 		mapboxgl.accessToken = process.env.VUE_APP_MAPBOX_TOKEN;
 
