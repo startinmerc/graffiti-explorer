@@ -33,6 +33,11 @@ export default {
 		loadMap() {
 			// Async loading function to await styles
 			return new Promise((resolve) => {
+				// Max Boundaries of map
+				var bounds = [
+					[-1.167997, 53.912440], // Southwest coordinates
+					[ -1.005763, 54.004220], // Northeast coordinates
+				];
 				// Create Map
 				let mapBox = new mapboxgl.Map({
 					// Target div id
@@ -46,6 +51,7 @@ export default {
 					// !-To change to auto-fit points, currently arbitrary
 					zoom: 13,
 					// !-Add maxBounds (will require some geolocation digging)
+					maxBounds: bounds,
 				});
 				// Resolve Promise when styling is loaded
 				mapBox.on("styledata", () => {
