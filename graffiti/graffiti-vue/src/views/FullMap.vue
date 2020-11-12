@@ -149,9 +149,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #map-container {
 	width: 100%;
 	height: calc(100vh - 90px);
+}
+.mapboxgl-user-location-dot,
+.mapboxgl-user-location-dot::before {
+	background-color: var(--red);
+}
+.mapboxgl-user-location-accuracy-circle {
+	background-color: var(--red);
+	opacity: 0.2;
+}
+.mapboxgl-ctrl-group {
+	border-radius: 0;
+	background: var(--white);
 }
 </style>
