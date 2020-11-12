@@ -70,7 +70,6 @@ export default {
 }
 .mapboxgl-popup {
 	--padding: 5px;
-	padding-bottom: 20px;
 	.placeholder {
 		min-height: 50px;
 		// Widen to compensate for .mapbox-popup-content padding
@@ -87,6 +86,9 @@ export default {
 	border-radius: 0;
 	box-shadow: none;
 	animation: popup 280ms ease-in forwards;
+	font: 1.1rem "Raleway", sans-serif;
+	background-color: var(--white);
+	border: 5px solid var(--red);
 	button {
 		margin: 0;
 	}
@@ -95,14 +97,14 @@ export default {
 		margin: var(--padding) 0;
 	}
 	h3 {
-		color: var(--red);
+		font-size: 1.2rem;
 	}
 }
 .mapboxgl-popup-close-button {
 	margin: 0;
 }
 .popup__image {
-	min-height: 50px;
+	min-height: 100px;
 	background-position: center;
 	background-size: cover;
 }
