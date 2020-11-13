@@ -9,4 +9,4 @@ class ArtistSerializer(serializers.ModelSerializer):
 class ArtworkSerializer(serializers.ModelSerializer):
   class Meta:
     model = Artwork
-    fields = ['title', 'location', 'artist', 'description', 'photos']
+    fields = ['created','edited','id','title','description','artist','coord_lat','coord_long','photos']
