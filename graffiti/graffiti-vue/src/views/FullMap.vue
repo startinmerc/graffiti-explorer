@@ -43,8 +43,8 @@ export default {
 			return new Promise((resolve) => {
 				// Max Boundaries of map
 				var bounds = [
-					[-1.167997, 53.91244], // Southwest coordinates
-					[-1.005763, 54.00422], // Northeast coordinates
+					[-1.223711918384766, 53.87456721172048],// Southwest coordinates
+					[-0.919670730694609, 54.0568663542761],// Northeast coordinates
 				];
 				// Create Map
 				let mapBox = new mapboxgl.Map({
@@ -52,13 +52,12 @@ export default {
 					container: "map-container",
 					// Custom mapbox style
 					style: process.env.VUE_APP_MAPBOX_STYLE,
-					// Geolocation of map center
-					center: [-1.080278, 53.958332],
-					// Default zoom level
-					zoom: 13,
 					// Add maxBounds
-					maxBounds: bounds,
+					// maxBounds: bounds,
 				});
+
+				// Fit rendered map to defined bounds
+				mapBox.fitBounds(bounds);
 
 				// Add control for geolocation of user
 				mapBox.addControl(
