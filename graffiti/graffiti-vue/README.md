@@ -2,15 +2,6 @@
 
 ---
 
-## To Do
-
-- Link up backend api...
-  - Change api response to geoJSON
-  - Implement validation on model fields
-  - Swap dbs?
-
----
-
 ## Project setup
 
 ```bash
