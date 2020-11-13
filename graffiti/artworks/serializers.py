@@ -4,7 +4,7 @@ from .models import Artist, Artwork
 class ArtistSerializer(serializers.ModelSerializer):
   class Meta:
     model = Artist
-    fields = ['name']
+    fields = ['id','name']
 
 class ArtworkSerializer(serializers.ModelSerializer):
   class Meta:
